@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
+
+html {box-sizing:border-box;}
+*, *::before, *::after {box-sizing:inherit; font-family: 'Cutive Mono', monospace;}
+
+.container {
+  width: 500px;
+  margin:auto;
+  background: url('https://wallpapercave.com/wp/wp3937577.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.container .content {
+  position: absolute;
+  top:0;
+  width: 500px;
+  height: 700px;
+  background:rgba(255, 255, 255, 0.424);
+  border:2px solid lightgray;
+  border-radius: 10px;
+}
+
+.content .list {
+  background: rgba(211, 209, 209, 0.466);
+  margin:0;
+}
+
+.content .li {
+  list-style: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 1px solid rgb(238, 235, 235);
+  text-indent: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.content div {
+  padding-left: 0;
+  width: 100%;
+}
+
+.content div .check {
+  display: flex;
+  align-content: center;
+}
+
+.content input {
+  width:100%;
+  margin: 0;
+  height: 75px;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+}
+
+.content input:focus {
+  outline: none;
+}
+
+.content .list .delete {
+  opacity: 0;
+}
+
+.content .list .delete:hover {
+  opacity: 1;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer div p {
+  border: 2px solid rgb(255, 252, 252);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+footer div p:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.content h1 {
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
