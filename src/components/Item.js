@@ -1,22 +1,31 @@
-import React from 'react' 
-import MaterialIcon from 'material-icons-react' 
-import { remove } from '../actions/modify' 
+import React, { useState, useEffect } from 'react'
+import MaterialIcon from 'material-icons-react'
+import { removeTodo, modifyList } from '../actions/modify.action'
 
 export default props => {
-  let i=0;
-  function deleteItem() {
-    remove(props)
+  const value = props.value
+  const [checked, setChecked] = useState(props.checked)
+
+  useEffect(() => {
+    modifyList({
+      id: props.id,
+      value: props.value,
+      checked: checked
+    })
+  }, [checked, props.id, props.value])
+
+  function remove(e) {
+    removeTodo(props.id)
   }
-  console.log(props)
+
   return (
-    <div key={i++} className="li">
-      <div className="check">
-        <MaterialIcon icon="check_box_outline_blank" size="medium" color="rgba(255, 255, 255, 1)"></MaterialIcon>
-        <span>{Object.values(props).join('')}</span>
-      </div>
-      <MaterialIcon icon="delete_outline" size="medium" color="rgba(255, 255, 255, 1)"></MaterialIcon>
-      {/* <button onClick={deleteItem}></button> */}
-    </div>
+    <li>
+      <input id={'check' + props.id} type="checkbox" checked={checked} onChange={e => setChecked(!checked)} />
+      <label htmlFor={'check' + props.id} className="replace">
+        <MaterialIcon icon="done" />
+      </label>
+      <input value={value} disabled />
+      <button type="button" onClick={remove}>X</button>
+    </li>
   )
-  
 }
